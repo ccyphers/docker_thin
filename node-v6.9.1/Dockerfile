@@ -1,4 +1,5 @@
-FROM busybox
+FROM alpine:3.5
 
-# pre-built static node - from ../build_node/
-ADD  ./build/node-v6.9.1.tar /opt
+# pre-built node - from ../build_node/
+COPY  ./build/node-v6.9.1.tar.gz .
+RUN mkdir /opt && tar -xvzf /node-v6.9.1.tar.gz -C /opt
